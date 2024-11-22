@@ -1,0 +1,96 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\FrameXML\UI.xsd">
+
+
+
+	<Script file="DevsLittleHelperMixin.lua"/>
+
+	<Frame name="DevsLittleHelperFrame" enableMouse="true" frameStrata="LOW" hidden="false" toplevel="true" parent="UIParent" mixin="DevsLittleHelperMixin">
+		<Size x="222" y="140"/>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="UIParent" relativePoint="TOPLEFT" x="7" y="-140"/>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentBG-leads" parentKey="BGLeads" atlas="GM-bgOpen-leads" hidden="true" parentArray="backgrounds">
+					<Size x="222" y="474"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="-5" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBG-assists" parentKey="BGAssists" atlas="GM-bgOpen-assists" hidden="true" parentArray="backgrounds">
+					<Size x="222" y="432"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="-5" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBG-regulars" parentKey="BGRegulars"  atlas="GM-bgOpen-regulars" hidden="true" parentArray="backgrounds">
+					<Size x="222" y="267"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="-5" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBG-party-leads" parentKey="BGPartyLeads"  atlas="GM-bgOpen-party-leads" hidden="true" parentArray="backgrounds">
+					<Size x="222" y="344"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="-5" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBG-party-regulars" parentKey="BGPartyRegulars"  atlas="GM-bgOpen-party-regulars" hidden="true" parentArray="backgrounds">
+					<Size x="222" y="238"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="-5" y="0"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentToggleButton" parentKey="toggleButton" mixin="DevsLittleHelperToggleButtonMixin">
+				<Size x="16" y="64"/>
+				<Anchors>
+					<Anchor point="RIGHT" x="-9" y="0"/>
+				</Anchors>
+				<Scripts>
+					<OnLoad method="OnLoad"/>
+					<OnClick method="OnClick"/>
+					<OnMouseUp method="OnMouseUp"/>
+					<OnMouseDown method="OnMouseDown"/>
+				</Scripts>
+				<NormalTexture file="Interface\RaidFrame\RaidPanel-Toggle">
+					<TexCoords left="0" right="0.5" top="0" bottom="1"/>
+				</NormalTexture>
+			</Button>
+			<Frame name="$parentDisplayFrame" parentKey="displayFrame" flattenRenderLayers="true" setAllPoints="true">
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentRaidMembersLabel" inherits="GameFontNormalMed3" text="RAID" parentKey="label">
+							<Anchors>
+								<Anchor point="TOPLEFT" x="10" y="-15"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<DropdownButton parentKey="ModeControlDropdown" name="$parentModeControlDropdown" inherits="WowStyle1DropdownTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="TOPLEFT" x="95" y="-50"/>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<FontString name="$parentRaidMembersLabel" inherits="GameFontNormalMed3" text="LogMode:" parentKey="label">
+									<Anchors>
+										<Anchor point="TOPLEFT" x="-85" y="-7"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</DropdownButton>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+		</Scripts>
+	</Frame>
+
+</Ui>

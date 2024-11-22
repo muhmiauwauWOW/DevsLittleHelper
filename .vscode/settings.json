@@ -1,0 +1,15 @@
+{
+    "Lua.diagnostics.globals": [
+        "CompactRaidFrameManager_Expand",
+        "CompactRaidFrameManager_Collapse",
+        "CompactRaidFrameManager",
+        "UIParent",
+        "CRFFlowFilterFunc",
+        "CRFGroupFilterFunc",
+        "PARTY",
+        "RAID",
+        "DevTools_Dump",
+        "BATTLEFIELDMINIMAP_OPACITY_LABEL",
+        "Mixin"
+    ]
+}
