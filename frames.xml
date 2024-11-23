@@ -5,10 +5,14 @@
 
 	<Script file="DevsLittleHelperMixin.lua"/>
 
+	<Include file="frames\ButtonTemplate\ButtonTemplate.xml"/>
+
+
+
 	<Frame name="DevsLittleHelperFrame" enableMouse="true" frameStrata="LOW" hidden="false" toplevel="true" parent="UIParent" mixin="DevsLittleHelperMixin">
 		<Size x="222" y="140"/>
 		<Anchors>
-			<Anchor point="TOPLEFT" relativeTo="UIParent" relativePoint="TOPLEFT" x="7" y="-140"/>
+			<Anchor point="TOPLEFT" relativeTo="UIParent" relativePoint="TOPLEFT" x="0" y="-140"/>
 		</Anchors>
 		<Layers>
 			<Layer level="ARTWORK">
@@ -60,6 +64,24 @@
 					<TexCoords left="0" right="0.5" top="0" bottom="1"/>
 				</NormalTexture>
 			</Button>
+
+
+			<Button name="$parentReloadButton" parentKey="reloadButton" inherits="DevsLittleHelperButton">
+				<KeyValues>
+					<KeyValue key="Icon" value="GM-raidMarker-reset" type="string"/>
+				</KeyValues>
+				<Anchors>
+					<Anchor point="TOPRIGHT" x="-11" y="-2"/>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						C_UI.Reload()
+					</OnClick>
+				</Scripts>
+			</Button>
+
+
+
 			<Frame name="$parentDisplayFrame" parentKey="displayFrame" flattenRenderLayers="true" setAllPoints="true">
 				<Layers>
 					<Layer level="ARTWORK">
@@ -71,6 +93,19 @@
 					</Layer>
 				</Layers>
 				<Frames>
+
+							
+				
+
+
+
+
+
+
+
+
+
+
 					<DropdownButton parentKey="ModeControlDropdown" name="$parentModeControlDropdown" inherits="WowStyle1DropdownTemplate" hidden="false">
 						<Anchors>
 							<Anchor point="TOPLEFT" x="95" y="-50"/>

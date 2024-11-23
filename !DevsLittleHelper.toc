@@ -1,12 +1,10 @@
 ﻿## Interface: 110005
 ## Title: Dev's Little Helper
-## Notes: Toolbox for addon devs
+## Notes: Toolbox for addon developer
 ## Version: @project-version@
 ## Author: Muhmiauwau
 ## SavedVariables: DevsLittleHelperDB
-## X-Curse-Project-ID: 
-## X-Wago-ID: 
-## X-WoWI-ID: 
+## X-Curse-Project-ID: 1146219
 
 
 
@@ -16,8 +14,9 @@ Libs/AceAddon-3.0/AceAddon-3.0.xml
 Libs/AceEvent-3.0/AceEvent-3.0.xml
 Libs/AceLocale-3.0/AceLocale-3.0.xml
 Libs/AceDB-3.0/AceDB-3.0.xml
+Libs/LibLodash/LibLodash.lua
 
-
+locale/locale.xml
 
 frames.xml
 DevsLittleHelper.lua

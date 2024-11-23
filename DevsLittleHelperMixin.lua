@@ -1,5 +1,7 @@
 local AddonName, DevsLittleHelper = ...
 local AddOnInfo = {C_AddOns.GetAddOnInfo(AddonName)}
+
+
 local DLHMixin = {}
 
 
@@ -9,7 +11,7 @@ local DLHMixin = {}
 function DLHMixin:OnLoad()
     -- print("load")
 
-    -- self:Collapse()
+    self:Collapse()
     self.displayFrame.label:SetText(AddOnInfo[2]);
 
     self.BGPartyRegulars:Show();
@@ -27,9 +29,12 @@ end
 
 function DLHMixin:Expand()
 	self.collapsed = false;
-	self:SetPoint("TOPLEFT", UIParent, "TOPLEFT", -7, -140);
+	self:SetPoint("TOPLEFT", UIParent, "TOPLEFT",0, -140);
 	self.displayFrame:Show();
 	self.toggleButton:GetNormalTexture():SetTexCoord(0.5, 1, 0, 1);
+
+    self.reloadButton:SetPoint("TOPRIGHT", -11, -2);
+
 end
 
 
@@ -38,12 +43,12 @@ function DLHMixin:Collapse()
 	self:SetPoint("TOPLEFT", UIParent, "TOPLEFT", -200, -140);
 	self.displayFrame:Hide();
 	self.toggleButton:GetNormalTexture():SetTexCoord(0, 0.5, 0, 1);
+    self.reloadButton:SetPoint("TOPRIGHT", 25, -2);
 end
 
 
 
 DevsLittleHelperMixin = DLHMixin
-
 
 
 
