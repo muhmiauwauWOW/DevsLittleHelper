@@ -1,4 +1,4 @@
-package-as: DevsLittleHelper
+package-as: !DevsLittleHelper
 
 
 externals:
